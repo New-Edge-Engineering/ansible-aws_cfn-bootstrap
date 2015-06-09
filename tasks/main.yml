@@ -1,4 +1,8 @@
 ---
+- name: AWS CFN Bootstrap | Install supporting packages
+  apt:
+    name: python-setuptools
+
 - name: AWS CFN Bootstrap | Download the package.
   get_url:
     dest: /tmp/
