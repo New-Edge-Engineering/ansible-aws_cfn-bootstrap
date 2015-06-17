@@ -1,7 +1,7 @@
 ---
 - name: AWS CFN Bootstrap | Install supporting packages
   apt:
-    name: python-setuptools
+    name: python-pip
 
 - name: AWS CFN Bootstrap | Download the package.
   get_url:
@@ -14,12 +14,6 @@
     dest: /tmp/
     src: /tmp/aws-cfn-bootstrap-latest.tar.gz
 
-- name: AWS CFN Bootstrap | Determine verion
-  shell: ls -d */ | grep aws-cfn-bootstrap
-  args:
-    chdir: /tmp/
-  register: aws_cfn_bootstrap_directory
-
 - name: AWS CFN Bootstrap | Install package.
-  easy_install:
-    name: "/tmp/{{ aws_cfn_bootstrap_directory.stdout }}"
+  pip:
+    name: /tmp/aws-cfn-bootstrap-latest.tar.gz
