@@ -1,0 +1,21 @@
+---
+galaxy_info:
+  author: Matthew Green
+  company: New Edge Engineering
+  description: installation of cfn-bootstrap
+  min_ansible_version: 1.7
+  license: MIT
+  platforms:
+  - name: Ubuntu
+    versions:
+    - precise
+    - trusty
+  - name: EL
+    versions:
+    - 6
+    - 7
+  categories:
+  - system
+  - cloud:ec2
+
+dependencies: []
